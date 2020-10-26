@@ -33,26 +33,26 @@ mysqli_close($link);
         <h1 class="text-center">Last messages</h1>
         <ul class="list-group">
             <li class="list-group-item d-flex font-weight-bold">
-                <div class="col-1 text-center">Id</div>
+                <div class="col-3 text-center">Id</div>
                 <div class="col-3 text-center">Name</div>
-                <div class="col-3 text-center">Email</div>
-                <div class="col-8">Subject</div>
+                <div class="col-2 text-center">Email</div>
+                <div class="col-4">Subject</div>
             </li>
           <?php  
           for($i = 0; $i < count($res); $i++) {
             //$res[$i]['name'] . "\n";
           ?>  
           <li class="list-group-item d-flex">
-            <div class="col-1 text-center">
-                <?php echo $res[$i]['id'] ?>
+            <div class="col-3 text-center">
+                <?php echo $res[$i]['created_at'] ?>
             </div>
             <div class="col-3 text-center">
                 <?php echo $res[$i]['username'] ?>
             </div>
-            <div class="col-3 text-center">
+            <div class="col-2 text-center">
                 <?php echo $res[$i]['email'] ?>
             </div>
-            <div class="col-8">
+            <div class="col-4">
               <a href="show.php?id=<?php echo $res[$i]['id'] ?>">
               <?php echo $res[$i]['subject'] ?>
               </a>
